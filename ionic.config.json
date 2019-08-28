@@ -1,0 +1,7 @@
+{
+  "name": "primeservers",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
