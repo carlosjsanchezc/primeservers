@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+
+
+    <ion-title>{{titulo}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+  <ion-card>
+    <ion-card-header color="secondary">
+      <ion-card-subtitle>Evento</ion-card-subtitle>
+      
+    </ion-card-header>
+    <ion-item>
+      <ion-label>Nombre</ion-label>
+      <ion-input [(ngModel)]="nombre"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Fecha Inicio</ion-label>
+      <ion-datetime  placeholder="Select Date" [(ngModel)]="fecha_inicio"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label>Hora Inicio</ion-label>
+      <ion-datetime display-format="h:mm A" picker-format="h:mm A" [(ngModel)]="hora_inicio" ></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label>Fecha Fin</ion-label>
+      <ion-datetime [(ngModel)]="fecha_fin" placeholder="Select Date"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label>Hora Fin</ion-label>
+      <ion-datetime display-format="h:mm A" picker-format="h:mm A" [(ngModel)]="hora_fin"></ion-datetime>
+    </ion-item>
+    <ion-button expand="full" (click)="Guardar()">
+      Guardar
+    </ion-button>
+  </ion-card>
+</ion-content>
