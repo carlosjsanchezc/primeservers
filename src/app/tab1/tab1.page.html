@@ -13,8 +13,16 @@ Eventos
 
 
 <ion-list lines="none">
-  <ion-item [routerLink]="'/evento/' + evento.id" detail="true" *ngFor="let evento of eventos" (click)="SetCoreEvento(evento.nombre,evento.fecha_inicio,evento.hora_inicio,evento.fecha_fin,evento.hora_fin)">
-      <ion-label>{{ evento.nombre }}</ion-label>
-  </ion-item>
+  <ion-list>
+    <ion-item-sliding *ngFor="let evento of eventos" (click)="SetCoreEvento(evento.nombre,evento.fecha_inicio,evento.hora_inicio,evento.fecha_fin,evento.hora_fin,evento.id)" detail="true">
+        <ion-item detail="true">
+            <ion-label>{{ evento.nombre }}</ion-label>
+        </ion-item>
+      <ion-item-options side="end">
+        <ion-item-option (click)="Eliminar(evento.id)"  color="danger">Eliminar</ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
 </ion-list>
 </ion-content>

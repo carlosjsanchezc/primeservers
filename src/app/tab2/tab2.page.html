@@ -1,9 +1,29 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Tab Two
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content></ion-content>
+    <ion-toolbar color="primary">
+      <ion-title>
+  Trabajadores
+      </ion-title>
+      <ion-buttons slot="end" >
+        <ion-button [routerLink]="'/trabajador/0'" ><ion-icon src="/assets/icon/file.svg"  ></ion-icon></ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+  
+  
+  <ion-list lines="none">
+    <ion-list>
+      <ion-item-sliding *ngFor="let trabajador of trabajadores" (click)="SetCoreTrabajador(trabajador.nombre,trabajador.fecha_inicio,trabajador.hora_inicio,trabajador.fecha_fin,trabajador.hora_fin,trabajador.id)" detail="true">
+          <ion-item detail="true">
+              <ion-label>{{ trabajador.nombre }}</ion-label>
+          </ion-item>
+        <ion-item-options side="end">
+          <ion-item-option (click)="Eliminar(trabajador.id)"  color="danger">Eliminar</ion-item-option>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+  
+  </ion-list>
+  </ion-content>
+  
